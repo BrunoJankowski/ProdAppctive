@@ -4,7 +4,13 @@
 
 }
 .item {
-    border: 4px solid rgb(158, 15, 15);
+    border: 4px solid rgb(218, 84, 84);
+    background-color: rgb(80, 48, 117);
+}
+
+.item img{
+    margin-top: 2.5rem;
+    width: 100%;
 }
 
 .plus {
@@ -14,4 +20,26 @@
 
 .goal {
     width: 2rem;
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+}
+
+body{
+    font-weight: bold;
+    color: azure;
+    background-color: rgb(177, 107, 113);
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(165, 79, 83);
+  }
+  
+nav a , p {
+    display: block;
+    margin: 1rem 3rem;
+    text-decoration: none;
+    color: azure;
+    font-weight: bold;
 }

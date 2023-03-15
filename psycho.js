@@ -8,13 +8,13 @@ console.log(itemButton, itemHours);
 
 for(var i = 0; i<itemGoal.length; i++){
     var goal = itemGoal[i]
-    var initial_goal = localStorage.getItem('hours_goal_va')
+    var initial_goal = localStorage.getItem('hours_goal_psycho')
     goal.value =  initial_goal
     var goal_score = goal.value
 
     goal.addEventListener('change', function(event) {
         var item_goal = event.target.value
-        localStorage.setItem('hours_goal_va', item_goal)
+        localStorage.setItem('hours_goal_psycho', item_goal)
       })
 }
 
@@ -23,7 +23,7 @@ for(var i = 0; i < itemButton.length; i++){
     var hours_ittem = itemHours[i]
     var reset = itemReset[i]
 
-    var initial_hours = localStorage.getItem('hours_worked_va')
+    var initial_hours = localStorage.getItem('hours_worked_psycho')
     hours_ittem.value = initial_hours
 
 
@@ -34,7 +34,7 @@ for(var i = 0; i < itemButton.length; i++){
         var index = button_clicked.getAttribute("index")
         var hours_worked = itemHours[index]
         hours_worked.value++ 
-        localStorage.setItem('hours_worked_va', hours_worked.value)
+        localStorage.setItem('hours_worked_psycho', hours_worked.value)
         var score = hours_worked.value
         checkGoal(score, goal_score) //add check goal
     })
@@ -44,7 +44,7 @@ for(var i = 0; i < itemButton.length; i++){
         var index = button_clicked.getAttribute("index")
         var reset_hours = itemHours[index]
         reset_hours.value = 0
-        localStorage.setItem('hours_worked_va', 0)
+        localStorage.setItem('hours_worked_psycho', 0)
     })
 
 }
