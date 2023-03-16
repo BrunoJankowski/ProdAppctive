@@ -3,8 +3,9 @@ var itemHours = document.getElementsByClassName('hours')
 var itemReset = document.getElementsByClassName('reset')
 var itemGoal = document.getElementsByClassName('goal')
 var containter = document.getElementsByClassName('item')
+var itemCongrats = document.querySelector('.congrats')
 
-console.log(itemButton, itemHours);
+console.log(itemCongrats);
 
 for(var i = 0; i<itemGoal.length; i++){
     var goal = itemGoal[i]
@@ -45,13 +46,18 @@ for(var i = 0; i < itemButton.length; i++){
         var reset_hours = itemHours[index]
         reset_hours.value = 0
         localStorage.setItem('hours_worked_CS', 0)
+        var score = reset_hours.value
+        checkGoal(score, goal_score)
     })
 
 }
 
 function checkGoal(score, goal_score){
     if(score >= goal_score){
-        console.log("YEY");
+        itemCongrats.style.display = 'block'
+    }
+    else{
+        itemCongrats.style.display = 'none';
     }
     
 }   
