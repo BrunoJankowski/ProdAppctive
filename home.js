@@ -55,9 +55,16 @@ var stored_events = JSON.parse(localStorage.events);
 var itemCalenderButton = document.getElementsByClassName('calender-btn')
 console.log(itemCalenderButton);
 
-var itemCalenderValue = document.getElementsByClassName('calender-value')
-var itemCalenderEvent = document.getElementsByClassName('calender-event')
-var itemCalenderButton = document.getElementsByClassName('add-calender-btn')
+var itemCalenderValue = document.getElementsByClassName('calender-value')[0]
+var itemCalenderEvent = document.getElementsByClassName('calender-event')[0]
+var itemCalenderAddButton = document.getElementsByClassName('add-calender-btn')[0]
+var itemEvent = document.getElementsByClassName('event-txt')[0]
+
+itemCalenderAddButton.addEventListener('click', function(event){
+    console.log(itemCalenderValue.value, itemCalenderEvent.value);
+    stored_events[itemCalenderValue.value-1] = itemCalenderEvent.value
+})
+
 
 for(var i = 0; i<itemCalenderButton.length; i++){
     var button_calender = itemCalenderButton[i]
@@ -67,6 +74,9 @@ for(var i = 0; i<itemCalenderButton.length; i++){
         var index = button_clicked.getAttribute('data-index')
         if(stored_events[index] != undefined){
             console.log(stored_events[index])
+            itemEvent.innerText = 'Event: ' + stored_events[index]
+            itemCalenderValue.value = ' '
+            itemCalenderEvent.value = ' '
         }
         else{
             console.log('no event');

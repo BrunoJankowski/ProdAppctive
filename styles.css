@@ -18,7 +18,7 @@
     font-size: 1vw;
     margin: 1vw;
 }
-.calender-event , .calender-value, .add-calender-btn, .calender-txt{
+.calender-event , .calender-value, .add-calender-btn, .calender-txt, .event-txt{
     position: relative;
     left: 72vw;
 }
