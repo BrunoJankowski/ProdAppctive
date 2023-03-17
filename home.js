@@ -61,8 +61,10 @@ var itemCalenderValue = document.getElementsByClassName('calender-value')[0]
 var itemCalenderEvent = document.getElementsByClassName('calender-event')[0]
 var itemCalenderAddButton = document.getElementsByClassName('add-calender-btn')[0]
 var itemEvent = document.getElementsByClassName('event-txt')[0]
+var itemCalenderDiv = document.getElementsByClassName('calendar-itm')
 
-console.log(itemCalenderRemoveButton);
+console.log(itemCalenderRemoveButton)
+console.log(itemCalenderDiv);
 itemCalenderRemoveButton.hidden = true
 
 if(localStorage.getItem('events') == null){
@@ -72,6 +74,16 @@ if(localStorage.getItem('events') == null){
 var stored_events = JSON.parse(localStorage.getItem('events'))
 
 itemCalenderButton = document.getElementsByClassName('calender-btn')
+
+//ading clock
+const clock = new Date()
+var today = clock.getDate() - 1
+for(var i = 0; i<32; i++){
+    if(i == today){
+        itemCalenderDiv[i].style.backgroundColor = 'red';
+    }
+}
+
 
 itemCalenderAddButton.addEventListener('click', function(event){
     if(itemCalenderEvent.value != null){
