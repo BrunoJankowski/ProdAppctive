@@ -3,14 +3,38 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 
 }
+
+.calendar{
+    width: 45vw;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+.calendar-itm{
+    border: 4px solid rgb(47, 124, 69);
+    background-color: rgb(26, 26, 26);
+    border-radius: 15px;
+}
+.calendar-itm p, form{
+    font-size: 1vw;
+    margin: 1vw;
+}
+.calender-event , .calender-value, .add-calender-btn, .calender-txt{
+    position: relative;
+    left: 72vw;
+}
+
+.calender-value{
+    width: 4vw;
+}
 .item {
-    border: 4px solid rgb(218, 84, 84);
-    background-color: rgb(80, 48, 117);
+    border: 4px solid rgb(47, 124, 69);
+    background-color: rgb(26, 26, 26);
+    border-radius: 15px;
 }
 
 .item-goals {
-    border: 4px solid rgb(218, 84, 84);
-    background-color: rgb(80, 48, 117);
+    border: 4px solid rgb(142, 51, 51);
+    background-color: rgb(44, 44, 44);
 }
 
 .item-goals table {
@@ -49,13 +73,13 @@
 body{
     font-weight: bold;
     color: azure;
-    background-color: rgb(177, 107, 113);
+    background-color: rgb(39, 39, 39);
 }
 
 nav {
     display: flex;
     justify-content: space-evenly;
-    background-color: rgb(165, 79, 83);
+    background-color: rgb(12, 10, 11);
   }
   
 nav a , p {

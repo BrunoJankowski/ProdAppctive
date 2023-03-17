@@ -48,6 +48,31 @@ var stars_count_cs = parseInt(cs_text)
 for(var i = 0; i<stars_count_cs; i++){
     stars_cs.push('X')
 }*/
+var events = JSON.parse(localStorage.events)
+localStorage.events = JSON.stringify(events);
+
+var stored_events = JSON.parse(localStorage.events);
+var itemCalenderButton = document.getElementsByClassName('calender-btn')
+console.log(itemCalenderButton);
+
+var itemCalenderValue = document.getElementsByClassName('calender-value')
+var itemCalenderEvent = document.getElementsByClassName('calender-event')
+var itemCalenderButton = document.getElementsByClassName('add-calender-btn')
+
+for(var i = 0; i<itemCalenderButton.length; i++){
+    var button_calender = itemCalenderButton[i]
+    button_calender.setAttribute('data-index', i)
+    button_calender.addEventListener('click', function(event){
+        var button_clicked = event.target
+        var index = button_clicked.getAttribute('data-index')
+        if(stored_events[index] != undefined){
+            console.log(stored_events[index])
+        }
+        else{
+            console.log('no event');
+        }
+    })
+}
 
 itemCS.innerText = "Done: " + cs_text
 itemCS_goal.innerText = "Need: " + cs_text_goal
