@@ -43,13 +43,24 @@
     border-spacing: 20vw 0vw;
 }
 
-.add-calender-btn, .calender-btn, .calender-event , .calender-value{
+.add-calender-btn, .calender-btn, .calender-event , .calender-value, .reset {
     background-color: rgb(146, 43, 66);
     font-weight: bold;
     color: rgb(255, 236, 242);
     border-color: rgb(20, 20, 16);
     border-radius: 15px;
     box-shadow: 0.1vw 0.1vw 15px 0px rgba(0,0,0,0.75);
+    margin-bottom: 0.3vh;
+}
+
+.hours , .goal ,.plus{
+    background-color: rgb(42, 94, 40);
+    font-weight: bold;
+    color: rgb(255, 236, 242);
+    border-color: rgb(20, 20, 16);
+    border-radius: 15px;
+    box-shadow: 0.1vw 0.1vw 15px 0px rgba(0,0,0,0.75);
+    margin-bottom: 0.3vh;
 }
 
 .calender-value{
@@ -73,13 +84,13 @@
     margin-right: 2vw;
 }
 
-.item-goals a {
+.container-2 > .item-goals a {
     text-decoration: none;
     color: beige;
 }
 
 
-.item-goals table:hover {
+.item-goals:hover > table {
     transition: 0.5s;
     opacity: 100%;
 }
