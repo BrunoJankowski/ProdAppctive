@@ -80,10 +80,10 @@ function checkCalendar() {
     for(var i = 0; i<itemCalenderButton.length; i++){
         if(stored_events[i] != null){
             console.log(stored_events[i])
-            itemCalenderButton[i].disabled = false
+            itemCalenderButton[i].hidden = false
         }
         else{
-            itemCalenderButton[i].disabled = true
+            itemCalenderButton[i].hidden = true
         }
     }
 }

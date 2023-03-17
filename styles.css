@@ -28,6 +28,7 @@
 .calendar-itm{
     border: 4px solid rgb(114, 8, 8);
     background-color: rgb(26, 26, 26);
+    height: 4.8vw;
 }
 .calendar-itm p, form{
     font-size: 1vw;
@@ -42,8 +43,18 @@
     border-spacing: 20vw 0vw;
 }
 
+.add-calender-btn, .calender-btn, .calender-event , .calender-value{
+    background-color: rgb(146, 43, 66);
+    font-weight: bold;
+    color: rgb(255, 236, 242);
+    border-color: rgb(20, 20, 16);
+    border-radius: 15px;
+    box-shadow: 0.1vw 0.1vw 15px 0px rgba(0,0,0,0.75);
+}
+
 .calender-value{
-    width: 4vw;
+    width: 3vw;
+    text-align: center;
 }
 .item {
     border: 4px solid rgb(47, 124, 69);
