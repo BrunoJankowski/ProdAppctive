@@ -48,10 +48,13 @@ var stars_count_cs = parseInt(cs_text)
 for(var i = 0; i<stars_count_cs; i++){
     stars_cs.push('X')
 }*/
-var events = JSON.parse(localStorage.events)
-localStorage.events = JSON.stringify(events);
 
-var stored_events = JSON.parse(localStorage.events);
+//localStorage.events = JSON.stringify(events);
+//var events = JSON.parse(localStorage.events)
+
+//var stored_events = JSON.parse(localStorage.events);
+
+var stored_events = []
 var itemCalenderButton = document.getElementsByClassName('calender-btn')
 console.log(itemCalenderButton);
 
@@ -60,11 +63,32 @@ var itemCalenderEvent = document.getElementsByClassName('calender-event')[0]
 var itemCalenderAddButton = document.getElementsByClassName('add-calender-btn')[0]
 var itemEvent = document.getElementsByClassName('event-txt')[0]
 
+itemCalenderButton = document.getElementsByClassName('calender-btn')
+
 itemCalenderAddButton.addEventListener('click', function(event){
-    console.log(itemCalenderValue.value, itemCalenderEvent.value);
-    stored_events[itemCalenderValue.value-1] = itemCalenderEvent.value
+    if(itemCalenderEvent.value != null){
+        console.log(itemCalenderValue.value, itemCalenderEvent.value);
+        stored_events[itemCalenderValue.value-1] = itemCalenderEvent.value
+        itemCalenderValue.value = 0
+        itemCalenderEvent.value = ""
+        checkCalendar()
+    }
 })
 
+function checkCalendar() {
+    itemCalenderButton = document.getElementsByClassName('calender-btn');
+    for(var i = 0; i<itemCalenderButton.length; i++){
+        if(stored_events[i] != null){
+            console.log(stored_events[i])
+            itemCalenderButton[i].disabled = false
+        }
+        else{
+            itemCalenderButton[i].disabled = true
+        }
+    }
+}
+
+checkCalendar()
 
 for(var i = 0; i<itemCalenderButton.length; i++){
     var button_calender = itemCalenderButton[i]
@@ -74,9 +98,9 @@ for(var i = 0; i<itemCalenderButton.length; i++){
         var index = button_clicked.getAttribute('data-index')
         if(stored_events[index] != undefined){
             console.log(stored_events[index])
-            itemEvent.innerText = 'Event: ' + stored_events[index]
-            itemCalenderValue.value = ' '
-            itemCalenderEvent.value = ' '
+            var day = parseFloat(index) + 1
+            itemEvent.innerText = 'Event Day ' + day + ': ' + stored_events[index]
+            checkCalendar()
         }
         else{
             console.log('no event');
@@ -86,28 +110,28 @@ for(var i = 0; i<itemCalenderButton.length; i++){
 
 itemCS.innerText = "Done: " + cs_text
 itemCS_goal.innerText = "Need: " + cs_text_goal
-itemCS_table.innerText = parseFloat(cs_text/cs_text_goal) * 100 + "%"
+itemCS_table.innerText = (parseFloat(cs_text/cs_text_goal) * 100).toFixed(1) + "%"
 
 itemMath.innerText = "Done: " + math_text
 itemMath_goal.innerText = "Need: " + math_text_goal
-itemMath_table.innerText = parseFloat(math_text/math_text_goal) * 100 + "%"
+itemMath_table.innerText = (parseFloat(math_text/math_text_goal) * 100).toFixed(1) + "%"
 
 
 itemVA.innerText = "Done: " + va_text
 itemVA_goal.innerText = "Need: " + va_text_goal
-itemVA_table.innerText = parseFloat(va_text/va_text_goal) * 100 + "%"
+itemVA_table.innerText = (parseFloat(va_text/va_text_goal) * 100).toFixed(1) + "%"
 
 itemEng.innerText = "Done: " + eng_text
 itemEng_goal.innerText = "Need: " + eng_text_goal
-itemEng_table.innerText = parseFloat(eng_text/eng_text_goal) * 100 + "%"
+itemEng_table.innerText = (parseFloat(eng_text/eng_text_goal) * 100).toFixed(1) + "%"
 
 itemPsycho.innerText = "Done: " + psycho_text
 itemPsycho_goal.innerText = "Need: " + psycho_text_goal
-itemPsycho_table.innerText = parseFloat(psycho_text/psycho_text_goal) * 100 + "%"
+itemPsycho_table.innerText = (parseFloat(psycho_text/psycho_text_goal) * 100).toFixed(1) + "%"
 
 itemPol.innerText = "Done: " + pl_text
 itemPol_goal.innerText = "Need: " + pl_text_goal
-itemPol_table.innerText = parseFloat(pl_text/pl_text_goal) * 100 + "%"
+itemPol_table.innerText = (parseFloat(pl_text/pl_text_goal) * 100).toFixed(1) + "%"
 
 var cs_score = parseFloat(cs_text)
 var math_score = parseFloat(math_text)
