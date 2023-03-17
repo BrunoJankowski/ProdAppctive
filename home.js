@@ -54,14 +54,22 @@ for(var i = 0; i<stars_count_cs; i++){
 
 //var stored_events = JSON.parse(localStorage.events);
 
-var stored_events = []
-var itemCalenderButton = document.getElementsByClassName('calender-btn')
-console.log(itemCalenderButton);
 
+var itemCalenderButton = document.getElementsByClassName('calender-btn')
+var itemCalenderRemoveButton = document.getElementsByClassName('rmv-calender-btn')[0]
 var itemCalenderValue = document.getElementsByClassName('calender-value')[0]
 var itemCalenderEvent = document.getElementsByClassName('calender-event')[0]
 var itemCalenderAddButton = document.getElementsByClassName('add-calender-btn')[0]
 var itemEvent = document.getElementsByClassName('event-txt')[0]
+
+console.log(itemCalenderRemoveButton);
+itemCalenderRemoveButton.hidden = true
+
+if(localStorage.getItem('events') == null){
+    localStorage.setItem('events', '[]')
+}
+
+var stored_events = JSON.parse(localStorage.getItem('events'))
 
 itemCalenderButton = document.getElementsByClassName('calender-btn')
 
@@ -71,9 +79,25 @@ itemCalenderAddButton.addEventListener('click', function(event){
         stored_events[itemCalenderValue.value-1] = itemCalenderEvent.value
         itemCalenderValue.value = 0
         itemCalenderEvent.value = ""
+        console.log(stored_events)
+        //we make sure that the data is stored after the end of the website
+        localStorage.setItem('events', JSON.stringify(stored_events))
         checkCalendar()
     }
 })
+
+
+function addRemoveButton(index) {
+    itemCalenderRemoveButton.hidden = false
+    itemCalenderRemoveButton.addEventListener('click', function(event){
+        stored_events[index] = null
+        //we make sure that the data is stored after the end of the website
+        localStorage.setItem('events', JSON.stringify(stored_events))
+        checkCalendar()
+        itemCalenderRemoveButton.hidden = true
+        itemEvent.innerText = ""
+    })
+}
 
 function checkCalendar() {
     itemCalenderButton = document.getElementsByClassName('calender-btn');
@@ -98,8 +122,10 @@ for(var i = 0; i<itemCalenderButton.length; i++){
         var index = button_clicked.getAttribute('data-index')
         if(stored_events[index] != undefined){
             console.log(stored_events[index])
+
             var day = parseFloat(index) + 1
             itemEvent.innerText = 'Event Day ' + day + ': ' + stored_events[index]
+            addRemoveButton(index)
             checkCalendar()
         }
         else{
