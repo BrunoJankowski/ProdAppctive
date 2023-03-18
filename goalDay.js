@@ -20,23 +20,32 @@ var itemButtonDoneTwo = document.getElementsByClassName('submit-done')[1]
 
 var itemButtonResetDone = document.getElementsByClassName('reset-done')[0]
 
-itemButtonResetDone.addEventListener('click', function(){
-    localStorage.setItem('task_one_done', false)
-    localStorage.setItem('task_two_done', false)
-})
+var task_one_done = localStorage.getItem('task_one_done')
+var task_two_done = localStorage.getItem('task_two_done')
 
 var itemButtonDoneV = document.getElementsByClassName('done')[0]
 var itemButtonDoneV2 = document.getElementsByClassName('done')[1]
 
 
+checkDone()
+
+
+
 itemButtonDoneV.addEventListener('click', function(){
     localStorage.setItem('task_one_done', true)
+    checkDone()
 })
 
 itemButtonDoneV2.addEventListener('click', function(){
     localStorage.setItem('task_two_done', true)
+    checkDone()
 })
 
+itemButtonResetDone.addEventListener('click', function(){
+    localStorage.setItem('task_one_done', false)
+    localStorage.setItem('task_two_done', false)
+    location.reload()
+})    
 
 var day_text = localStorage.getItem('hours_worked_day')
 var day_text_goal = localStorage.getItem('hours_goal_day')
@@ -46,6 +55,7 @@ console.log(itemCongrats);
 var score = parseFloat(localStorage.getItem('hours_worked_day'))
 var goal = parseFloat(localStorage.getItem('hours_goal_day'))
 checkGoal(score, goal)
+
 
 itemButtonSub.addEventListener('click', function(){
     localStorage.setItem('task_day_name', itemTaskName.value)
@@ -118,3 +128,27 @@ function checkGoal(score, goal_score){
     }
     
 }   
+
+function checkDone() {
+    var task_one_done = localStorage.getItem('task_one_done')
+    var task_two_done = localStorage.getItem('task_two_done')
+
+    if(task_one_done != undefined){
+        if(task_one_done == 'true'){
+            itemButtonDoneV.value = "done"
+        }
+    }
+    else{
+        itemButtonDoneV.value = "do"
+    }
+
+    if(task_two_done != undefined){
+        if(task_two_done == 'true'){
+            itemButtonDoneV2.value = "done"
+        }
+    }
+    else{
+        itemButtonDoneV2.value = "do"
+    }
+    
+}

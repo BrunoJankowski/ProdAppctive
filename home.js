@@ -53,8 +53,6 @@ for(var i = 0; i<stars_count_cs; i++){
 //var events = JSON.parse(localStorage.events)
 
 //var stored_events = JSON.parse(localStorage.events);
-
-var itemTaskProgress = document.getElementsByClassName('progress-task')[0]
 var itemCalenderButton = document.getElementsByClassName('calender-btn')
 var itemCalenderRemoveButton = document.getElementsByClassName('rmv-calender-btn')[0]
 var itemCalenderValue = document.getElementsByClassName('calender-value')[0]
@@ -68,7 +66,6 @@ var itemTaskDoneTWo = document.getElementsByClassName('task-done')[1]
 
 
 itemCalenderRemoveButton.hidden = true
-itemTaskProgress.innerText = "TASKS FOR A DAY " 
 itemTaskName.innerText = localStorage.getItem('task_day_name') + " " + (parseFloat(localStorage.getItem('hours_worked_day')/localStorage.getItem('hours_goal_day')) * 100).toFixed(1) + "%"
 itemTaskDone.innerText = localStorage.getItem('task_day_done_name')
 itemTaskDoneTWo.innerText = localStorage.getItem('task_day_done_name_two')
