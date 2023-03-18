@@ -4,12 +4,40 @@ var itemReset = document.getElementsByClassName('reset')
 var itemGoal = document.getElementsByClassName('goal')
 var containter = document.getElementsByClassName('item')
 var itemCongrats = document.querySelector('.congrats')
-var progressTable = document.getElementsByClassName('progress')[0]
+var progressTable = document.getElementsByClassName('progress-day')[0]
+var itemButtonSub = document.getElementsByClassName('submit')[0]
+
+var itemTaskName = document.getElementsByClassName('task-day')[0]
+itemTaskName.value = localStorage.getItem('task_day_name')
+
+var itemTaskDone = document.getElementsByClassName('task-day-done')[0]
+itemTaskDone.value = localStorage.getItem('task_day_done_name')
+var itemButtonDone = document.getElementsByClassName('submit-done')[0]
+
+var itemTaskDoneTwo = document.getElementsByClassName('task-day-done')[1]
+itemTaskDoneTwo.value = localStorage.getItem('task_day_done_name_two')
+var itemButtonDoneTwo = document.getElementsByClassName('submit-done')[1]
 
 var day_text = localStorage.getItem('hours_worked_day')
 var day_text_goal = localStorage.getItem('hours_goal_day')
 
 console.log(itemCongrats);
+
+var score = parseFloat(localStorage.getItem('hours_worked_day'))
+var goal = parseFloat(localStorage.getItem('hours_goal_day'))
+checkGoal(score, goal)
+
+itemButtonSub.addEventListener('click', function(){
+    localStorage.setItem('task_day_name', itemTaskName.value)
+})
+
+itemButtonDone.addEventListener('click', function(){
+    localStorage.setItem('task_day_done_name', itemTaskDone.value)
+})
+
+itemButtonDoneTwo.addEventListener('click', function(){
+    localStorage.setItem('task_day_done_name_two', itemTaskDoneTwo.value)
+})
 
 for(var i = 0; i<itemGoal.length; i++){
     var goal = itemGoal[i]
@@ -54,9 +82,19 @@ for(var i = 0; i < itemButton.length; i++){
         checkGoal(score, goal_score)
     })
 
+
+
 }
 
 function checkGoal(score, goal_score){
-    progressTable.innerText = (parseFloat(score/goal_score) * 100).toFixed(1) + "%"
+    console.log(score, goal_score);
+    score = parseFloat(score)
+    goal_score = parseFloat(goal_score)
+    if(score >= goal_score) {
+        progressTable.innerText = "DONE"
+    }
+    else{
+        progressTable.innerText = (parseFloat(score/goal_score) * 100).toFixed(1) + "%"
+    }
     
 }   

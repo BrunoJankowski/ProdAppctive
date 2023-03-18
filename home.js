@@ -54,6 +54,7 @@ for(var i = 0; i<stars_count_cs; i++){
 
 //var stored_events = JSON.parse(localStorage.events);
 
+var itemTaskProgress = document.getElementsByClassName('progress-task')[0]
 var itemCalenderButton = document.getElementsByClassName('calender-btn')
 var itemCalenderRemoveButton = document.getElementsByClassName('rmv-calender-btn')[0]
 var itemCalenderValue = document.getElementsByClassName('calender-value')[0]
@@ -61,8 +62,12 @@ var itemCalenderEvent = document.getElementsByClassName('calender-event')[0]
 var itemCalenderAddButton = document.getElementsByClassName('add-calender-btn')[0]
 var itemEvent = document.getElementsByClassName('event-txt')[0]
 var itemCalenderDiv = document.getElementsByClassName('calendar-itm')
+var itemTaskName = document.getElementsByClassName('task-name')[0]
+
 
 itemCalenderRemoveButton.hidden = true
+itemTaskProgress.innerText = "TASKS FOR A DAY " 
+itemTaskName.innerText = localStorage.getItem('task_day_name') + " " + (parseFloat(localStorage.getItem('hours_worked_day')/localStorage.getItem('hours_goal_day')) * 100).toFixed(1) + "%"
 
 if(localStorage.getItem('events') == null){
     localStorage.setItem('events', '[]')
