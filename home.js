@@ -63,8 +63,6 @@ var itemCalenderAddButton = document.getElementsByClassName('add-calender-btn')[
 var itemEvent = document.getElementsByClassName('event-txt')[0]
 var itemCalenderDiv = document.getElementsByClassName('calendar-itm')
 
-console.log(itemCalenderRemoveButton)
-console.log(itemCalenderDiv);
 itemCalenderRemoveButton.hidden = true
 
 if(localStorage.getItem('events') == null){
@@ -80,14 +78,13 @@ const clock = new Date()
 var today = clock.getDate() - 1
 for(var i = 0; i<32; i++){
     if(i == today){
-        itemCalenderDiv[i].style.backgroundColor = 'red';
+        itemCalenderDiv[i].style.backgroundColor = 'crimson';
     }
 }
 
 
 itemCalenderAddButton.addEventListener('click', function(event){
     if(itemCalenderEvent.value != null){
-        console.log(itemCalenderValue.value, itemCalenderEvent.value);
         stored_events[itemCalenderValue.value-1] = itemCalenderEvent.value
         itemCalenderValue.value = 0
         itemCalenderEvent.value = ""
@@ -115,11 +112,12 @@ function checkCalendar() {
     itemCalenderButton = document.getElementsByClassName('calender-btn');
     for(var i = 0; i<itemCalenderButton.length; i++){
         if(stored_events[i] != null){
-            console.log(stored_events[i])
             itemCalenderButton[i].hidden = false
+            //itemCalenderDiv[i].style.backgroundColor = 'blue';
         }
         else{
             itemCalenderButton[i].hidden = true
+            //itemCalenderDiv[i].style.backgroundColor = 'rgb(26, 26, 26)'
         }
     }
 }
@@ -133,9 +131,7 @@ for(var i = 0; i<itemCalenderButton.length; i++){
         var button_clicked = event.target
         var index = button_clicked.getAttribute('data-index')
         if(stored_events[index] != undefined){
-            console.log(stored_events[index])
-
-            var day = parseFloat(index) + 1
+            var day = parseInt(index) + 1
             itemEvent.innerText = 'Event Day ' + day + ': ' + stored_events[index]
             addRemoveButton(index)
             checkCalendar()

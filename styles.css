@@ -138,3 +138,8 @@ nav a , p {
 .add-calender{
     margin-left: 22vw;
 }
+
+.hours, .goal{
+    width: 4vw;
+    font-size: 2vw;
+}
