@@ -54,7 +54,6 @@ for(var i = 0; i<stars_count_cs; i++){
 
 //var stored_events = JSON.parse(localStorage.events);
 
-
 var itemCalenderButton = document.getElementsByClassName('calender-btn')
 var itemCalenderRemoveButton = document.getElementsByClassName('rmv-calender-btn')[0]
 var itemCalenderValue = document.getElementsByClassName('calender-value')[0]

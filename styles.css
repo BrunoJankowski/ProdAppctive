@@ -47,7 +47,7 @@ body{
     border-spacing: 8vw 2vw;
 }
 
-.add-calender-btn, .calender-btn, .calender-event , .calender-value, .reset , .rmv-calender-btn{
+.add-calender-btn, .calender-btn, .calender-event , .calender-value, .reset , .rmv-calender-btn, .task-day{
     background-color: rgb(146, 43, 66);
     font-weight: bold;
     color: rgb(255, 236, 242);

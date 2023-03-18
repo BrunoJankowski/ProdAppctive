@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="goalDay.js" async></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Prodapptive</title>
+  </head>
+  <body>
+    <nav>
+      <a href="cs.html"> CS</a>
+      <a href="math.html"> Math</a>
+      <a href="va.html"> VA</a>
+      <a href="english.html"> English</a>
+      <a href="psycho.html"> Psycho</a>
+      <a href="polish.html"> Polish</a>
+      <a href="home.html"> Home</a>
+    </nav>
+    <div class="container">
+      <div class="item">
+        <table>
+          <tr>
+            <td>
+              <input type="text" class="task-day" value="..." />
+            </td>
+            <td>
+              <input type="number" class="hours" value="0" readonly />
+            </td>
+            <td>
+              <form action="" method="GET">
+                <input type="button" class="reset" value="RESET" />
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <form action="" method="GET">
+              <input type="button" class="plus" value="+" />
+            </form>
+          </tr>
+          <tr>
+            <td>
+              <h2>GOAL:</h2>
+            </td>
+            <td>
+              <input type="number" class="goal" value="0" />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="item">
+        <p class="progress-day"></p>
+      </div>
+    </div>
+  </body>
+</html>
