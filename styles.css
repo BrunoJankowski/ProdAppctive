@@ -53,7 +53,7 @@ body{
     border-spacing: 8vw 2vw;
 }
 
-.add-calender-btn, .calender-btn, .calender-event , .calender-value, .reset , .rmv-calender-btn, .task-day, .submit{
+.add-calender-btn, .calender-btn, .calender-event , .calender-value, .reset, .reset-done, .rmv-calender-btn, .task-day, .submit, .task-day-done, .submit-done{
     background-color: rgb(146, 43, 66);
     font-weight: bold;
     color: rgb(255, 236, 242);
@@ -63,7 +63,7 @@ body{
     margin-bottom: 0.3vh;
 }
 
-.hours , .goal ,.plus{
+.hours , .goal ,.plus ,.done{
     background-color: rgb(42, 94, 40);
     font-weight: bold;
     color: rgb(255, 236, 242);
@@ -71,6 +71,10 @@ body{
     border-radius: 15px;
     box-shadow: 0.1vw 0.1vw 15px 0px rgba(0,0,0,0.75);
     margin-bottom: 0.3vh;
+}
+
+.done{
+    font-size: 2vw;
 }
 
 .calender-value{
@@ -148,4 +152,9 @@ nav a , p {
 .hours, .goal{
     width: 4vw;
     font-size: 2vw;
+}
+
+.progress-task{
+    font-size: 2vw;
+    margin-left: 1vw;
 }

@@ -63,11 +63,15 @@ var itemCalenderAddButton = document.getElementsByClassName('add-calender-btn')[
 var itemEvent = document.getElementsByClassName('event-txt')[0]
 var itemCalenderDiv = document.getElementsByClassName('calendar-itm')
 var itemTaskName = document.getElementsByClassName('task-name')[0]
+var itemTaskDone = document.getElementsByClassName('task-done')[0]
+var itemTaskDoneTWo = document.getElementsByClassName('task-done')[1]
 
 
 itemCalenderRemoveButton.hidden = true
 itemTaskProgress.innerText = "TASKS FOR A DAY " 
 itemTaskName.innerText = localStorage.getItem('task_day_name') + " " + (parseFloat(localStorage.getItem('hours_worked_day')/localStorage.getItem('hours_goal_day')) * 100).toFixed(1) + "%"
+itemTaskDone.innerText = localStorage.getItem('task_day_done_name')
+itemTaskDoneTWo.innerText = localStorage.getItem('task_day_done_name_two')
 
 if(localStorage.getItem('events') == null){
     localStorage.setItem('events', '[]')
@@ -86,6 +90,26 @@ for(var i = 0; i<32; i++){
     }
 }
 
+var task_one_done = localStorage.getItem('task_one_done')
+var task_two_done = localStorage.getItem('task_two_done')
+
+if(task_one_done != undefined){
+    if(task_one_done == 'true'){
+        itemTaskDone.style.color = 'rgb(121, 255, 161)'
+    }
+    else{
+        itemTaskDone.style.color = 'red'
+    }
+}
+
+if(task_two_done != undefined){
+    if(task_two_done == 'true'){
+        itemTaskDoneTWo.style.color = 'rgb(121, 255, 161)'
+    }
+    else{
+        itemTaskDoneTWo.style.color = 'red'
+    }
+}
 
 itemCalenderAddButton.addEventListener('click', function(event){
     if(itemCalenderEvent.value != null){

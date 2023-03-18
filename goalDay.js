@@ -18,6 +18,26 @@ var itemTaskDoneTwo = document.getElementsByClassName('task-day-done')[1]
 itemTaskDoneTwo.value = localStorage.getItem('task_day_done_name_two')
 var itemButtonDoneTwo = document.getElementsByClassName('submit-done')[1]
 
+var itemButtonResetDone = document.getElementsByClassName('reset-done')[0]
+
+itemButtonResetDone.addEventListener('click', function(){
+    localStorage.setItem('task_one_done', false)
+    localStorage.setItem('task_two_done', false)
+})
+
+var itemButtonDoneV = document.getElementsByClassName('done')[0]
+var itemButtonDoneV2 = document.getElementsByClassName('done')[1]
+
+
+itemButtonDoneV.addEventListener('click', function(){
+    localStorage.setItem('task_one_done', true)
+})
+
+itemButtonDoneV2.addEventListener('click', function(){
+    localStorage.setItem('task_two_done', true)
+})
+
+
 var day_text = localStorage.getItem('hours_worked_day')
 var day_text_goal = localStorage.getItem('hours_goal_day')
 
