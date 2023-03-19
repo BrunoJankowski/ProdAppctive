@@ -64,6 +64,18 @@ var itemTaskName = document.getElementsByClassName('task-name')[0]
 var itemTaskDone = document.getElementsByClassName('task-done')[0]
 var itemTaskDoneTWo = document.getElementsByClassName('task-done')[1]
 
+var itemNotes = document.getElementsByClassName('notes-refo')[0]
+
+
+var notes = localStorage.getItem('notes')
+if(notes != undefined){
+    console.log(notes.length);
+    if(notes.length > 100){
+        notes = notes.slice(0,100) + '...'
+    }
+    itemNotes.innerText = notes
+}
+
 
 itemCalenderRemoveButton.hidden = true
 itemTaskName.innerText = localStorage.getItem('task_day_name') + " " + (parseFloat(localStorage.getItem('hours_worked_day')/localStorage.getItem('hours_goal_day')) * 100).toFixed(1) + "%"
