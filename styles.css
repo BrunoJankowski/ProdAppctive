@@ -53,7 +53,7 @@ body{
     border-spacing: 8vw 2vw;
 }
 
-.add-calender-btn, .calender-btn, .calender-event , .calender-value, .reset, .reset-done, .rmv-calender-btn, .task-day, .submit, .task-day-done, .submit-done, .notes{
+.add-calender-btn, .calender-btn, .calender-event , .calender-value, .reset, .reset-done, .rmv-calender-btn, .task-day, .submit, .task-day-done, .submit-done, .notes, .reset-notes{
     background-color: rgb(146, 43, 66);
     font-weight: bold;
     color: rgb(255, 236, 242);
@@ -70,7 +70,7 @@ body{
 }
 
 
-.hours , .goal ,.plus ,.done{
+.hours , .goal ,.plus ,.done, .submit-notes{
     background-color: rgb(42, 94, 40);
     font-weight: bold;
     color: rgb(255, 236, 242);
