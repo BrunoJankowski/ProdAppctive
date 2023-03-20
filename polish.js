@@ -6,7 +6,18 @@ var containter = document.getElementsByClassName('item')
 
 var itemCongrats = document.querySelector('.congrats')
 
-console.log(itemButton, itemHours);
+
+var itemNotes = document.getElementsByClassName('notes-mir')[0]
+var itemNotesReset = document.getElementsByClassName('reset-notes')[0]
+itemNotesReset.addEventListener('click', function(){
+    itemNotes.innerText = '...'
+    localStorage.setItem('pl-notes', '')
+    location.reload
+})
+
+itemNotes.innerText = localStorage.getItem('pl-notes')
+
+
 
 for(var i = 0; i<itemGoal.length; i++){
     var goal = itemGoal[i]
