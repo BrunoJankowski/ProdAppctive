@@ -70,7 +70,7 @@ body{
 }
 
 
-.hours , .goal ,.plus ,.done, .submit-notes{
+.hours , .goal ,.plus ,.done, .submit-notes, .pl-add-notes ,.cs-add-notes,.va-add-notes,.math-add-notes,.psycho-add-notes,.eng-add-notes{
     background-color: rgb(42, 94, 40);
     font-weight: bold;
     color: rgb(255, 236, 242);
