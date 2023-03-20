@@ -14,6 +14,11 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.container-3{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 body{
     color: crimson;
     font-family:'Lucida Sans Unicode';
@@ -110,7 +115,10 @@ body{
     text-decoration: none;
     color: beige;
 }
-
+.container-3 > .item-goals a {
+    text-decoration: none;
+    color: beige;
+}
 
 .item-goals:hover > table {
     transition: 0.5s;
