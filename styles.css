@@ -170,7 +170,7 @@ nav a , p {
     font-size: 2vw;
 }
 
-.progress-task{
+.progress-task, .notes-ref{
     font-size: 2vw;
     margin-left: 1vw;
 }
