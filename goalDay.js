@@ -59,6 +59,7 @@ checkGoal(score, goal)
 
 itemButtonSub.addEventListener('click', function(){
     localStorage.setItem('task_day_name', itemTaskName.value)
+    location.reload()
 })
 
 itemButtonDone.addEventListener('click', function(){

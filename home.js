@@ -70,8 +70,8 @@ var itemNotes = document.getElementsByClassName('notes-refo')[0]
 var notes = localStorage.getItem('notes')
 if(notes != undefined){
     console.log(notes.length);
-    if(notes.length > 100){
-        notes = notes.slice(0,100) + '...'
+    if(notes.length > 200){
+        notes = notes.slice(0,200) + '...'
     }
     itemNotes.innerText = notes
 }
@@ -101,6 +101,17 @@ for(var i = 0; i<32; i++){
 
 var task_one_done = localStorage.getItem('task_one_done')
 var task_two_done = localStorage.getItem('task_two_done')
+var task_done_proc = (parseFloat(localStorage.getItem('hours_worked_day')/localStorage.getItem('hours_goal_day')) * 100).toFixed(1)
+console.log(task_done_proc, "proc");
+
+if(task_done_proc != undefined){
+    if(task_done_proc >= 100.0){
+        itemTaskName.style.color = 'rgb(121, 255, 161)'
+    }
+    else{
+        itemTaskName.style.color = 'red'
+    }
+}
 
 if(task_one_done != undefined){
     if(task_one_done == 'true'){
