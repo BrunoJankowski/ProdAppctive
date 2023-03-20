@@ -6,6 +6,18 @@ var containter = document.getElementsByClassName('item')
 
 var itemCongrats = document.querySelector('.congrats')
 
+var itemNotes = document.getElementsByClassName('notes-mir')[0]
+var itemNotesReset = document.getElementsByClassName('reset-notes')[0]
+itemNotesReset.addEventListener('click', function(){
+    itemNotes.innerText = '...'
+    localStorage.setItem('math-notes', '')
+    location.reload
+})
+
+itemNotes.innerText = localStorage.getItem('math-notes')
+
+
+
 console.log(itemButton, itemHours);
 
 for(var i = 0; i<itemGoal.length; i++){

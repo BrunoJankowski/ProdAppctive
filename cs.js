@@ -5,7 +5,19 @@ var itemGoal = document.getElementsByClassName('goal')
 var containter = document.getElementsByClassName('item')
 var itemCongrats = document.querySelector('.congrats')
 
-console.log(itemCongrats);
+
+var itemNotes = document.getElementsByClassName('notes-mir')[0]
+var itemNotesReset = document.getElementsByClassName('reset-notes')[0]
+itemNotesReset.addEventListener('click', function(){
+    itemNotes.innerText = '...'
+    localStorage.setItem('cs-notes', '')
+    location.reload
+})
+
+itemNotes.innerText = localStorage.getItem('cs-notes')
+
+
+
 
 for(var i = 0; i<itemGoal.length; i++){
     var goal = itemGoal[i]
