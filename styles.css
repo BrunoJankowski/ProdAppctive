@@ -12,8 +12,8 @@
 .container-2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-
 }
+
 body{
     color: crimson;
     font-family:'Lucida Sans Unicode';
@@ -93,6 +93,7 @@ body{
     background-color: rgb(26, 26, 26);
     border-radius: 15px;
 }
+
 
 .item-goals {
     border: 4px solid rgb(142, 51, 51);
