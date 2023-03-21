@@ -28,7 +28,7 @@ itemCSButton.addEventListener('click', function(){
     }
     else if(clickCount == 2){
         localStorage.setItem('cs-notes', itemNotes.value)
-        itemInfoNote.innerText = 'note sent to' + itemCSButton.value
+        itemInfoNote.innerText = 'note sent to ' + itemCSButton.value
         clickCount = 0
         itemNotes.value = '...'
         location.reload
@@ -42,12 +42,12 @@ itemMathButton.addEventListener('click', function(){
     console.log(clickCount);
     if(clickCount == 1){
         itemNotes.value = localStorage.getItem('math-notes')
-        itemInfoNote.innerText = 'note opened'
+        itemInfoNote.innerText = 'note opened '+ itemMathButton.value
         
     }
     else if(clickCount == 2){
         localStorage.setItem('math-notes', itemNotes.value)
-        itemInfoNote.innerText = 'note sent'
+        itemInfoNote.innerText = 'note sent to ' + itemMathButton.value
         clickCount = 0
         itemNotes.value = '...'
         location.reload
@@ -61,12 +61,12 @@ itemVAButton.addEventListener('click', function(){
     console.log(clickCount);
     if(clickCount == 1){
         itemNotes.value = localStorage.getItem('va-notes')
-        itemInfoNote.innerText = 'note opened'
+        itemInfoNote.innerText = 'note opened '+ itemVAButton.value
         
     }
     else if(clickCount == 2){
         localStorage.setItem('va-notes', itemNotes.value)
-        itemInfoNote.innerText = 'note sent'
+        itemInfoNote.innerText = 'note sent to '+ itemVAButton.value
         clickCount = 0
         itemNotes.value = '...'
         location.reload
@@ -80,28 +80,54 @@ itemEnglishButton.addEventListener('click', function(){
     console.log(clickCount);
     if(clickCount == 1){
         itemNotes.value = localStorage.getItem('eng-notes')
-        itemInfoNote.innerText = 'note opened'
+        itemInfoNote.innerText = 'note opened '+ itemEnglishButton.value
         
     }
     else if(clickCount == 2){
         localStorage.setItem('eng-notes', itemNotes.value)
-        itemInfoNote.innerText = 'note sent'
+        itemInfoNote.innerText = 'note sent to '+ itemEnglishButton.value
         clickCount = 0
         itemNotes.value = '...'
         location.reload
     }
 })
 
+var clickCount = 0
 var itemPsychoButton = document.getElementsByClassName('psycho-add-notes')[0]
 itemPsychoButton.addEventListener('click', function(){
-    localStorage.setItem('psycho-notes', itemNotes.value)
-    location.reload
+    clickCount ++
+    console.log(clickCount);
+    if(clickCount == 1){
+        itemNotes.value = localStorage.getItem('psycho-notes')
+        itemInfoNote.innerText = 'note opened '+ itemPsychoButton.value
+        
+    }
+    else if(clickCount == 2){
+        localStorage.setItem('psycho-notes', itemNotes.value)
+        itemInfoNote.innerText = 'note sent to '+ itemPsychoButton.value
+        clickCount = 0
+        itemNotes.value = '...'
+        location.reload
+    }
 })
 
+var clickCount = 0
 var itemPlButton = document.getElementsByClassName('pl-add-notes')[0]
 itemPlButton.addEventListener('click', function(){
-    localStorage.setItem('pl-notes', itemNotes.value)
-    location.reload
+    clickCount ++
+    console.log(clickCount);
+    if(clickCount == 1){
+        itemNotes.value = localStorage.getItem('pl-notes')
+        itemInfoNote.innerText = 'note opened '+ itemPlButton.value
+        
+    }
+    else if(clickCount == 2){
+        localStorage.setItem('pl-notes', itemNotes.value)
+        itemInfoNote.innerText = 'note sent to '+ itemPlButton.value
+        clickCount = 0
+        itemNotes.value = '...'
+        location.reload
+    }
 })
 
 
