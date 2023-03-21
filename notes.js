@@ -4,6 +4,8 @@ itemNotes.value = localStorage.getItem('notes')
 var itemSumbit = document.getElementsByClassName('submit-notes')[0]
 var itemReset = document.getElementsByClassName('reset-notes')[0]
 
+var itemInfoNote = document.getElementsByClassName('info')[0]
+
 itemReset.addEventListener('click', function(){
     localStorage.setItem('notes', '...')
     location.reload()
@@ -21,12 +23,14 @@ itemCSButton.addEventListener('click', function(){
     console.log(clickCount);
     if(clickCount == 1){
         itemNotes.value = localStorage.getItem('cs-notes')
+        itemInfoNote.innerText = 'note opened'
         console.log('notes opened');
     }
     else if(clickCount == 2){
         localStorage.setItem('cs-notes', itemNotes.value)
-        console.log('added to notes');
+        itemInfoNote.innerText = 'note sent'
         clickCount = 0
+        itemNotes.value = '...'
         location.reload
     }
 })
