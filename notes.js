@@ -14,10 +14,20 @@ itemSumbit.addEventListener('click', function(){
     location.reload()
 })
 
+var clickCount = 0
 var itemCSButton = document.getElementsByClassName('cs-add-notes')[0]
 itemCSButton.addEventListener('click', function(){
-    localStorage.setItem('cs-notes', itemNotes.value)
-    location.reload
+    clickCount ++
+    console.log(clickCount);
+    if(clickCount == 1){
+        itemNotes.value = localStorage.getItem('cs-notes')
+        console.log('notes opened');
+    }
+    else if(clickCount == 2){
+        localStorage.setItem('cs-notes', itemNotes.value)
+        console.log('added to notes');
+        location.reload
+    }
 })
 
 var itemMathButton = document.getElementsByClassName('math-add-notes')[0]
