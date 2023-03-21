@@ -5,8 +5,13 @@ var itemSumbit = document.getElementsByClassName('submit-notes')[0]
 var itemReset = document.getElementsByClassName('reset-notes')[0]
 var itemClear = document.getElementsByClassName('clear-notes')[0]
 var itemAbandon = document.getElementsByClassName('cancel-notes')[0]
+var itemNoteHome = document.getElementsByClassName('home')[0]
 
 var itemInfoNote = document.getElementsByClassName('info')[0]
+
+itemNoteHome.addEventListener('click', function(){
+    itemNotes.value = localStorage.getItem('notes')
+})
 
 itemReset.addEventListener('click', function(){
     localStorage.setItem('notes', '...')
