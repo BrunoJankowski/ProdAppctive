@@ -58,7 +58,7 @@ body{
     border-spacing: 8vw 2vw;
 }
 
-.add-calender-btn, .calender-btn, .calender-event , .calender-value, .reset, .reset-done, .rmv-calender-btn, .task-day, .submit, .task-day-done, .submit-done, .notes, .reset-notes{
+.add-calender-btn, .calender-btn, .calender-event , .calender-value, .reset, .reset-done, .rmv-calender-btn, .task-day, .submit, .task-day-done, .submit-done, .notes, .reset-notes, .clear-notes{
     background-color: rgb(146, 43, 66);
     font-weight: bold;
     color: rgb(255, 236, 242);
