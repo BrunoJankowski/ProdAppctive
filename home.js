@@ -63,6 +63,7 @@ var itemCalenderDiv = document.getElementsByClassName('calendar-itm')
 var itemTaskName = document.getElementsByClassName('task-name')[0]
 var itemTaskDone = document.getElementsByClassName('task-done')[0]
 var itemTaskDoneTWo = document.getElementsByClassName('task-done')[1]
+var itemCount = document.getElementsByClassName('countdown')[0]
 
 var itemNotes = document.getElementsByClassName('notes-refo')[0]
 
@@ -92,7 +93,15 @@ itemCalenderButton = document.getElementsByClassName('calender-btn')
 
 //ading clock
 const clock = new Date()
+var matura = new Date("2023-05-01")
+
 var today = clock.getDate() - 1
+var timeDifference = matura - clock
+timeDifference = timeDifference / (1000 * 60 * 60 * 24);
+timeDifference = timeDifference.toFixed(0)
+itemCount.innerText = "TIME LEFT: " + timeDifference + "Days " + timeDifference*2 + "Hours"
+
+
 for(var i = 0; i<32; i++){
     if(i == today){
         itemCalenderDiv[i].style.backgroundColor = 'crimson';

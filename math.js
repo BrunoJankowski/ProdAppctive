@@ -5,7 +5,6 @@ var itemGoal = document.getElementsByClassName('goal')
 var containter = document.getElementsByClassName('item')
 
 var itemCongrats = document.querySelector('.congrats')
-
 var itemNotes = document.getElementsByClassName('notes-mir')[0]
 var itemNotesReset = document.getElementsByClassName('reset-notes')[0]
 itemNotesReset.addEventListener('click', function(){
@@ -25,7 +24,6 @@ for(var i = 0; i<itemGoal.length; i++){
     var initial_goal = localStorage.getItem('hours_goal_math')
     goal.value =  initial_goal
     var goal_score = goal.value
-
     goal.addEventListener('change', function(event) {
         var item_goal = event.target.value
         localStorage.setItem('hours_goal_math', item_goal)

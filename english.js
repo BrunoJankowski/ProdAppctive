@@ -19,7 +19,6 @@ itemNotes.innerText = localStorage.getItem('eng-notes')
 
 
 
-
 console.log(itemButton, itemHours);
 
 for(var i = 0; i<itemGoal.length; i++){
@@ -27,9 +26,9 @@ for(var i = 0; i<itemGoal.length; i++){
     var initial_goal = localStorage.getItem('hours_goal_english')
     goal.value =  initial_goal
     var goal_score = goal.value
-
     goal.addEventListener('change', function(event) {
         var item_goal = event.target.value
+        console.log('change');
         localStorage.setItem('hours_goal_english', item_goal)
       })
 }
@@ -38,7 +37,7 @@ for(var i = 0; i < itemButton.length; i++){
     var button = itemButton[i]
     var hours_ittem = itemHours[i]
     var reset = itemReset[i]
-
+    itemFinalGoal.value --
     var initial_hours = localStorage.getItem('hours_worked_english')
     hours_ittem.value = initial_hours
 

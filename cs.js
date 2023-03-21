@@ -5,6 +5,7 @@ var itemGoal = document.getElementsByClassName('goal')
 var containter = document.getElementsByClassName('item')
 var itemCongrats = document.querySelector('.congrats')
 
+var itemFinalGoal = document.getElementsByClassName('final-goal')[0]
 
 var itemNotes = document.getElementsByClassName('notes-mir')[0]
 var itemNotesReset = document.getElementsByClassName('reset-notes')[0]
@@ -17,7 +18,11 @@ itemNotesReset.addEventListener('click', function(){
 itemNotes.innerText = localStorage.getItem('cs-notes')
 
 
+itemFinalGoal.value = localStorage.getItem('final-cs')
 
+itemFinalGoal.addEventListener('change', function(){
+    localStorage.setItem('final-cs', itemFinalGoal.value)
+})
 
 for(var i = 0; i<itemGoal.length; i++){
     var goal = itemGoal[i]
@@ -39,11 +44,12 @@ for(var i = 0; i < itemButton.length; i++){
     var initial_hours = localStorage.getItem('hours_worked_CS')
     hours_ittem.value = initial_hours
 
-
     button.setAttribute('index', i)
     reset.setAttribute('index', i)
     button.addEventListener("click", function(event){
         var button_clicked = event.target
+        itemFinalGoal.value --
+        localStorage.setItem('final-cs', itemFinalGoal.value)
         var index = button_clicked.getAttribute("index")
         var hours_worked = itemHours[index]
         hours_worked.value++ 
@@ -71,5 +77,4 @@ function checkGoal(score, goal_score){
     else{
         itemCongrats.style.display = 'none';
     }
-    
 }   

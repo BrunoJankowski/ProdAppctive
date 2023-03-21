@@ -5,7 +5,7 @@ var itemGoal = document.getElementsByClassName('goal')
 var containter = document.getElementsByClassName('item')
 
 var itemCongrats = document.querySelector('.congrats')
-
+var itemFinalGoal = document.getElementsByClassName('final-goal')[0]
 
 var itemNotes = document.getElementsByClassName('notes-mir')[0]
 var itemNotesReset = document.getElementsByClassName('reset-notes')[0]
