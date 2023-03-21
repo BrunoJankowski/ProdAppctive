@@ -84,7 +84,7 @@ body{
 }
 
 
-.hours , .goal ,.plus ,.done, .submit-notes, .pl-add-notes ,.cs-add-notes,.va-add-notes,.math-add-notes,.psycho-add-notes,.eng-add-notes,.home{
+.hours , .goal ,.plus ,.done, .submit-notes, .pl-add-notes ,.cs-add-notes,.va-add-notes,.math-add-notes,.psycho-add-notes,.eng-add-notes,.home,.final-goal{
     background-color: rgb(42, 94, 40);
     font-weight: bold;
     color: rgb(255, 236, 242);
@@ -144,10 +144,16 @@ body{
     padding: 1rem 5rem;
 }
 
-.goal {
+.goal{
     width: 2rem;
     margin-left: 3rem;
     margin-bottom: 1rem;
+}
+
+.final-goal{
+    width: 2rem;
+    font-size: 1rem;
+    margin-right: 0.5rem;
 }
 
 body{
