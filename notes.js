@@ -3,6 +3,7 @@ itemNotes.value = localStorage.getItem('notes')
 
 var itemSumbit = document.getElementsByClassName('submit-notes')[0]
 var itemReset = document.getElementsByClassName('reset-notes')[0]
+var itemClear = document.getElementsByClassName('clear-notes')[0]
 
 var itemInfoNote = document.getElementsByClassName('info')[0]
 
@@ -13,7 +14,7 @@ itemReset.addEventListener('click', function(){
 
 itemSumbit.addEventListener('click', function(){
     localStorage.setItem('notes', itemNotes.value)
-    location.reload()
+    itemInfoNote.innerText = 'note submited to home page'
 })
 
 var clickCount = 0
