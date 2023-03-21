@@ -33,13 +33,14 @@ var clickCount = 0
 itemAbandon.addEventListener('click', function(){
     itemNotes.value = ''
     itemInfoNote.innerText = 'changes abandoned'
+    checkClicks(0, 0)
     clickCount = 0
 })
 
 var itemCSButton = document.getElementsByClassName('cs-add-notes')[0]
 itemCSButton.addEventListener('click', function(){
     clickCount ++
-    
+    checkClicks(clickCount, itemCSButton)
     if(clickCount == 1){
         itemNotes.value = localStorage.getItem('cs-notes')
         itemInfoNote.innerText = 'note opened ' + itemCSButton.value
@@ -58,6 +59,7 @@ itemCSButton.addEventListener('click', function(){
 var itemMathButton = document.getElementsByClassName('math-add-notes')[0]
 itemMathButton.addEventListener('click', function(){
     clickCount ++
+    checkClicks(clickCount, itemMathButton)
     console.log(clickCount);
     if(clickCount == 1){
         itemNotes.value = localStorage.getItem('math-notes')
@@ -69,7 +71,7 @@ itemMathButton.addEventListener('click', function(){
         itemInfoNote.innerText = 'note sent to ' + itemMathButton.value
         clickCount = 0
         itemNotes.value = '...'
-        location.reload
+        location.reload()
     }
 })
 
@@ -77,6 +79,7 @@ itemMathButton.addEventListener('click', function(){
 var itemVAButton = document.getElementsByClassName('va-add-notes')[0]
 itemVAButton.addEventListener('click', function(){
     clickCount ++
+    checkClicks(clickCount, itemVAButton)
     console.log(clickCount);
     if(clickCount == 1){
         itemNotes.value = localStorage.getItem('va-notes')
@@ -88,7 +91,7 @@ itemVAButton.addEventListener('click', function(){
         itemInfoNote.innerText = 'note sent to '+ itemVAButton.value
         clickCount = 0
         itemNotes.value = '...'
-        location.reload
+        location.reload()
     }
 })
 
@@ -96,6 +99,7 @@ itemVAButton.addEventListener('click', function(){
 var itemEnglishButton = document.getElementsByClassName('eng-add-notes')[0]
 itemEnglishButton.addEventListener('click', function(){
     clickCount ++
+    checkClicks(clickCount, itemEnglishButton)
     console.log(clickCount);
     if(clickCount == 1){
         itemNotes.value = localStorage.getItem('eng-notes')
@@ -107,7 +111,7 @@ itemEnglishButton.addEventListener('click', function(){
         itemInfoNote.innerText = 'note sent to '+ itemEnglishButton.value
         clickCount = 0
         itemNotes.value = '...'
-        location.reload
+        location.reload()
     }
 })
 
@@ -115,6 +119,7 @@ itemEnglishButton.addEventListener('click', function(){
 var itemPsychoButton = document.getElementsByClassName('psycho-add-notes')[0]
 itemPsychoButton.addEventListener('click', function(){
     clickCount ++
+    checkClicks(clickCount, itemPsychoButton)
     console.log(clickCount);
     if(clickCount == 1){
         itemNotes.value = localStorage.getItem('psycho-notes')
@@ -126,7 +131,7 @@ itemPsychoButton.addEventListener('click', function(){
         itemInfoNote.innerText = 'note sent to '+ itemPsychoButton.value
         clickCount = 0
         itemNotes.value = '...'
-        location.reload
+        location.reload()
     }
 })
 
@@ -134,6 +139,7 @@ itemPsychoButton.addEventListener('click', function(){
 var itemPlButton = document.getElementsByClassName('pl-add-notes')[0]
 itemPlButton.addEventListener('click', function(){
     clickCount ++
+    checkClicks(clickCount, itemPlButton)
     console.log(clickCount);
     if(clickCount == 1){
         itemNotes.value = localStorage.getItem('pl-notes')
@@ -145,11 +151,25 @@ itemPlButton.addEventListener('click', function(){
         itemInfoNote.innerText = 'note sent to '+ itemPlButton.value
         clickCount = 0
         itemNotes.value = '...'
-        location.reload
+        location.reload()
     }
 })
 
-
+function checkClicks(clicks, button){
+    if(clicks == 1){
+        button.style.backgroundColor = 'red'
+        itemAbandon.hidden = false
+        console.log("first clicked", button);
+    }
+    else if(clicks == 2){
+        button.style.backgroundColor = 'rgb(42, 94, 40)'
+        itemAbandon.hidden = true
+        console.log("submited");
+    }
+    else{
+        location.reload()
+    }
+}
 
 /*
 var subjectsButoons = [itemCSButton, itemMathButton, itemVAButton, itemEnglishButton, itemPsychoButton , itemPlButton]
