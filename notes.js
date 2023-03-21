@@ -4,7 +4,7 @@ itemNotes.value = localStorage.getItem('notes')
 var itemSumbit = document.getElementsByClassName('submit-notes')[0]
 var itemReset = document.getElementsByClassName('reset-notes')[0]
 var itemClear = document.getElementsByClassName('clear-notes')[0]
-var itemAbandon = document.getElementsByClassName('abandon-changes')[0]
+var itemAbandon = document.getElementsByClassName('cancel-notes')[0]
 
 var itemInfoNote = document.getElementsByClassName('info')[0]
 
@@ -25,6 +25,12 @@ itemSumbit.addEventListener('click', function(){
 })
 
 var clickCount = 0
+itemAbandon.addEventListener('click', function(){
+    itemNotes.value = ''
+    itemInfoNote.innerText = 'changes abandoned'
+    clickCount = 0
+})
+
 var itemCSButton = document.getElementsByClassName('cs-add-notes')[0]
 itemCSButton.addEventListener('click', function(){
     clickCount ++
@@ -42,13 +48,7 @@ itemCSButton.addEventListener('click', function(){
     }
 })
 
-var clickCount = 0
 
-itemAbandon.addEventListener('click', function(){
-    itemNotes.value = ''
-    itemInfoNote.innerText = 'changes abandoned'
-    clickCount = 0
-})
 
 var itemMathButton = document.getElementsByClassName('math-add-notes')[0]
 itemMathButton.addEventListener('click', function(){

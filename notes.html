@@ -18,41 +18,48 @@
       <a href="polish.html"> Polish</a>
       <a href="home.html"> Home</a>
     </nav>
+    <h2>Notes</h2>
     <div class="container">
-      <h2>Notes</h2>
       <div class="item-done">
         <table>
-          <form action="" method="GET">
-            <input type="button" class="clear-notes" value="clear" />
-          </form>
-          <form action="" method="GET">
-            <input
-              type="button"
-              class="abandon-changes"
-              value="abandon changes"
-            />
-          </form>
-          <p class="info"></p>
           <tr>
             <td>
-              <input type="text" class="notes" value="" />
-            </td>
-            <td>
               <form action="" method="GET">
-                <input
-                  type="button"
-                  class="submit-notes"
-                  value="submit to home page"
-                />
+                <input type="button" class="clear-notes" value="clear" />
               </form>
             </td>
             <td>
               <form action="" method="GET">
                 <input
                   type="button"
-                  class="reset-notes"
-                  value="reset home page"
+                  class="cancel-notes"
+                  value="abandon changes"
                 />
+              </form>
+            </td>
+            <td>
+              <p class="info"></p>
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td>
+              <input type="text" class="notes" value="" />
+            </td>
+            <td>
+              <form action="" method="GET">
+                <input type="button" class="home" value="home" />
+              </form>
+            </td>
+            <td>
+              <form action="" method="GET">
+                <input type="button" class="submit-notes" value="submit" />
+              </form>
+            </td>
+            <td>
+              <form action="" method="GET">
+                <input type="button" class="reset-notes" value="reset" />
               </form>
             </td>
           </tr>
