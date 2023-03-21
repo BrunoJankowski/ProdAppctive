@@ -26,6 +26,7 @@ itemCSButton.addEventListener('click', function(){
     else if(clickCount == 2){
         localStorage.setItem('cs-notes', itemNotes.value)
         console.log('added to notes');
+        clickCount = 0
         location.reload
     }
 })
