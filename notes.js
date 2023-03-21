@@ -4,6 +4,7 @@ itemNotes.value = localStorage.getItem('notes')
 var itemSumbit = document.getElementsByClassName('submit-notes')[0]
 var itemReset = document.getElementsByClassName('reset-notes')[0]
 var itemClear = document.getElementsByClassName('clear-notes')[0]
+var itemAbandon = document.getElementsByClassName('abandon-changes')[0]
 
 var itemInfoNote = document.getElementsByClassName('info')[0]
 
@@ -16,6 +17,7 @@ itemClear.addEventListener('click', function(){
     itemNotes.value = ''
     itemInfoNote.innerText = 'view cleared'
 })
+
 
 itemSumbit.addEventListener('click', function(){
     localStorage.setItem('notes', itemNotes.value)
@@ -30,7 +32,6 @@ itemCSButton.addEventListener('click', function(){
     if(clickCount == 1){
         itemNotes.value = localStorage.getItem('cs-notes')
         itemInfoNote.innerText = 'note opened ' + itemCSButton.value
-        
     }
     else if(clickCount == 2){
         localStorage.setItem('cs-notes', itemNotes.value)
@@ -42,6 +43,13 @@ itemCSButton.addEventListener('click', function(){
 })
 
 var clickCount = 0
+
+itemAbandon.addEventListener('click', function(){
+    itemNotes.value = ''
+    itemInfoNote.innerText = 'changes abandoned'
+    clickCount = 0
+})
+
 var itemMathButton = document.getElementsByClassName('math-add-notes')[0]
 itemMathButton.addEventListener('click', function(){
     clickCount ++
@@ -60,7 +68,7 @@ itemMathButton.addEventListener('click', function(){
     }
 })
 
-var clickCount = 0
+
 var itemVAButton = document.getElementsByClassName('va-add-notes')[0]
 itemVAButton.addEventListener('click', function(){
     clickCount ++
@@ -79,7 +87,7 @@ itemVAButton.addEventListener('click', function(){
     }
 })
 
-var clickCount = 0
+
 var itemEnglishButton = document.getElementsByClassName('eng-add-notes')[0]
 itemEnglishButton.addEventListener('click', function(){
     clickCount ++
@@ -98,7 +106,7 @@ itemEnglishButton.addEventListener('click', function(){
     }
 })
 
-var clickCount = 0
+
 var itemPsychoButton = document.getElementsByClassName('psycho-add-notes')[0]
 itemPsychoButton.addEventListener('click', function(){
     clickCount ++
@@ -117,7 +125,7 @@ itemPsychoButton.addEventListener('click', function(){
     }
 })
 
-var clickCount = 0
+
 var itemPlButton = document.getElementsByClassName('pl-add-notes')[0]
 itemPlButton.addEventListener('click', function(){
     clickCount ++
