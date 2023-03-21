@@ -20,14 +20,33 @@ var clickCount = 0
 var itemCSButton = document.getElementsByClassName('cs-add-notes')[0]
 itemCSButton.addEventListener('click', function(){
     clickCount ++
-    console.log(clickCount);
+    
     if(clickCount == 1){
         itemNotes.value = localStorage.getItem('cs-notes')
-        itemInfoNote.innerText = 'note opened'
-        console.log('notes opened');
+        itemInfoNote.innerText = 'note opened ' + itemCSButton.value
+        
     }
     else if(clickCount == 2){
         localStorage.setItem('cs-notes', itemNotes.value)
+        itemInfoNote.innerText = 'note sent to' + itemCSButton.value
+        clickCount = 0
+        itemNotes.value = '...'
+        location.reload
+    }
+})
+
+var clickCount = 0
+var itemMathButton = document.getElementsByClassName('math-add-notes')[0]
+itemMathButton.addEventListener('click', function(){
+    clickCount ++
+    console.log(clickCount);
+    if(clickCount == 1){
+        itemNotes.value = localStorage.getItem('math-notes')
+        itemInfoNote.innerText = 'note opened'
+        
+    }
+    else if(clickCount == 2){
+        localStorage.setItem('math-notes', itemNotes.value)
         itemInfoNote.innerText = 'note sent'
         clickCount = 0
         itemNotes.value = '...'
@@ -35,22 +54,42 @@ itemCSButton.addEventListener('click', function(){
     }
 })
 
-var itemMathButton = document.getElementsByClassName('math-add-notes')[0]
-itemMathButton.addEventListener('click', function(){
-    localStorage.setItem('math-notes', itemNotes.value)
-    location.reload
-})
-
+var clickCount = 0
 var itemVAButton = document.getElementsByClassName('va-add-notes')[0]
 itemVAButton.addEventListener('click', function(){
-    localStorage.setItem('va-notes', itemNotes.value)
-    location.reload
+    clickCount ++
+    console.log(clickCount);
+    if(clickCount == 1){
+        itemNotes.value = localStorage.getItem('va-notes')
+        itemInfoNote.innerText = 'note opened'
+        
+    }
+    else if(clickCount == 2){
+        localStorage.setItem('va-notes', itemNotes.value)
+        itemInfoNote.innerText = 'note sent'
+        clickCount = 0
+        itemNotes.value = '...'
+        location.reload
+    }
 })
 
+var clickCount = 0
 var itemEnglishButton = document.getElementsByClassName('eng-add-notes')[0]
 itemEnglishButton.addEventListener('click', function(){
-    localStorage.setItem('eng-notes', itemNotes.value)
-    location.reload
+    clickCount ++
+    console.log(clickCount);
+    if(clickCount == 1){
+        itemNotes.value = localStorage.getItem('eng-notes')
+        itemInfoNote.innerText = 'note opened'
+        
+    }
+    else if(clickCount == 2){
+        localStorage.setItem('eng-notes', itemNotes.value)
+        itemInfoNote.innerText = 'note sent'
+        clickCount = 0
+        itemNotes.value = '...'
+        location.reload
+    }
 })
 
 var itemPsychoButton = document.getElementsByClassName('psycho-add-notes')[0]
