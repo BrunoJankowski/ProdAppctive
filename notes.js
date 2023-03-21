@@ -12,6 +12,11 @@ itemReset.addEventListener('click', function(){
     location.reload()
 })
 
+itemClear.addEventListener('click', function(){
+    itemNotes.value = ''
+    itemInfoNote.innerText = 'view cleared'
+})
+
 itemSumbit.addEventListener('click', function(){
     localStorage.setItem('notes', itemNotes.value)
     itemInfoNote.innerText = 'note submited to home page'
