@@ -157,7 +157,7 @@ itemPlButton.addEventListener('click', function(){
 
 function checkClicks(clicks, button){
     if(clicks == 1){
-        button.style.backgroundColor = 'red'
+        button.style.backgroundColor = 'rgb(146, 43, 66)'
         itemAbandon.hidden = false
         console.log("first clicked", button);
     }

@@ -67,6 +67,15 @@ body{
     box-shadow: 0.1vw 0.1vw 15px 0px rgba(0,0,0,0.75);
     margin-bottom: 0.3vh;
 }
+.cancel-notes{
+    background-color: rgb(126, 81, 90);
+    font-weight: bold;
+    color: rgb(255, 236, 242);
+    border-color: rgb(20, 20, 16);
+    border-radius: 15px;
+    box-shadow: 0.1vw 0.1vw 15px 0px rgba(0,0,0,0.75);
+    margin-bottom: 0.3vh; 
+}
 
 .notes{
     text-align: start;
@@ -75,7 +84,7 @@ body{
 }
 
 
-.hours , .goal ,.plus ,.done, .submit-notes, .pl-add-notes ,.cs-add-notes,.va-add-notes,.math-add-notes,.psycho-add-notes,.eng-add-notes{
+.hours , .goal ,.plus ,.done, .submit-notes, .pl-add-notes ,.cs-add-notes,.va-add-notes,.math-add-notes,.psycho-add-notes,.eng-add-notes,.home{
     background-color: rgb(42, 94, 40);
     font-weight: bold;
     color: rgb(255, 236, 242);
