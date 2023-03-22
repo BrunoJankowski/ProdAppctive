@@ -18,10 +18,11 @@ var stored_names = JSON.parse(localStorage.getItem("link-names"));
 localStorage.setItem("links", JSON.stringify(stored_links));
 localStorage.setItem("link-names", JSON.stringify(stored_names));
 
+reloadLinks() //run to see links
+
 function reloadLinks() {
-    for(var i = 0; i<itemLinks.length;i++){
+    for(var i = 0; i<stored_names.length;i++){
         var linkText = itemLinks[i]
-        linkText.hidden = false
         linkText.innerHTML = '<a href="' + stored_links[i] + '" target=_blank class="linked">' + stored_names[i] + '<a/>'
         console.log(stored_links);
     }
