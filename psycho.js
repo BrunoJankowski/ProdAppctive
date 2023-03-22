@@ -14,7 +14,7 @@ itemNotesReset.addEventListener('click', function(){
     location.reload
 })
 
-itemNotes.innerText = localStorage.getItem('psycho-notes')
+itemNotes.innerHTML = localStorage.getItem('psycho-notes')
 
 
 

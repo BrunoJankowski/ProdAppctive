@@ -13,7 +13,7 @@ itemNotesReset.addEventListener('click', function(){
     location.reload
 })
 
-itemNotes.innerText = localStorage.getItem('math-notes')
+itemNotes.innerHTML = localStorage.getItem('math-notes')
 
 
 
