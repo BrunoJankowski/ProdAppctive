@@ -51,7 +51,7 @@ var insert = false
 
 var itemStyleLink = document.getElementsByClassName('style-link-btn')[0]
 itemStyleLink.addEventListener('click', function(){
-    itemNotes.value = itemNotes.value + '<a href="#" target=_blank> link name <a/>'
+    itemNotes.value = itemNotes.value + '<a href="#" target=_blank class="linked"> link name <a/>'
 })
 
 var tempNotes = "..."
@@ -60,7 +60,7 @@ itemStyleInsert.addEventListener('click', function(){
     if(insert){
         itemNotes.value = tempNotes
         itemInfoMode.innerText = 'mode: edit'
-        itemStyleInsert.style.backgroundColor = 'rgb(146, 43, 66)'
+        itemStyleInsert.style.backgroundColor = 'rgb(39, 48, 77)'
         insert = false
     }
     else{
@@ -68,7 +68,7 @@ itemStyleInsert.addEventListener('click', function(){
         console.log(tempNotes);
         itemNotes.value = ''
         itemInfoMode.innerText = 'mode: insert'
-        itemStyleInsert.style.backgroundColor = 'rgb(42, 94, 40)'
+        itemStyleInsert.style.backgroundColor = 'rgb(146, 43, 66)'
         insert = true
     }
     console.log(insert); 

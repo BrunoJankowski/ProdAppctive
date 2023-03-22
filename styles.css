@@ -58,7 +58,7 @@ body{
     border-spacing: 8vw 2vw;
 }
 
-.add-calender-btn, .calender-btn, .calender-event , .calender-value, .reset, .reset-done, .rmv-calender-btn, .task-day, .submit, .task-day-done, .submit-done, .notes, .reset-notes, .clear-notes{
+.add-calender-btn, .calender-btn, .calender-event , .calender-value, .reset, .reset-done, .rmv-calender-btn, .task-day, .submit, .task-day-done, .submit-done, .notes, .reset-notes, .clear-notes, .link-remove{
     background-color: rgb(146, 43, 66);
     font-weight: bold;
     color: rgb(255, 236, 242);
@@ -76,11 +76,10 @@ body{
     box-shadow: 0.1vw 0.1vw 15px 0px rgba(0,0,0,0.75);
     margin-bottom: 0.3vh; 
 }
-
 .notes{
     text-align: start;
     height: 30vh;
-    width: 50vw;
+    width: 73vw;
 }
 
 
@@ -206,4 +205,16 @@ nav a , p {
 .linked{
     text-decoration: none;
     color: beige; 
+}
+
+.link-div{
+    width: 99vw;
+    height: 33vh;
+    background-color: rgb(20, 26, 37);
+}
+
+h2{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
 }
