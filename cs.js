@@ -15,7 +15,7 @@ itemNotesReset.addEventListener('click', function(){
     location.reload
 })
 
-itemNotes.innerText = localStorage.getItem('cs-notes')
+itemNotes.innerHTML = localStorage.getItem('cs-notes')
 
 
 itemFinalGoal.value = localStorage.getItem('final-cs')
