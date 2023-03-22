@@ -10,7 +10,7 @@ var itemNoteHome = document.getElementsByClassName('home')[0]
 var itemClear = document.getElementsByClassName('clear-notes')[0]
 var itemAbandon = document.getElementsByClassName('cancel-notes')[0]
 var itemInfoNote = document.getElementsByClassName('info')[0] //infomessages
-
+var itemInfoMode = document.getElementsByClassName('mode-info')[0] //infomessages
 //links sys
 
 var itemLinksValue = document.getElementsByClassName('link-value')[0]
@@ -54,13 +54,21 @@ itemStyleLink.addEventListener('click', function(){
     itemNotes.value = itemNotes.value + '<a href="#" target=_blank> link name <a/>'
 })
 
+var tempNotes = "..."
 var itemStyleInsert = document.getElementsByClassName('style-insert-btn')[0]
 itemStyleInsert.addEventListener('click', function(){
     if(insert){
+        itemNotes.value = tempNotes
+        itemInfoMode.innerText = 'mode: edit'
+        itemStyleInsert.style.backgroundColor = 'rgb(146, 43, 66)'
         insert = false
     }
     else{
-
+        tempNotes = itemNotes.value //trick just not to use JSON :<<< hurts a bit
+        console.log(tempNotes);
+        itemNotes.value = ''
+        itemInfoMode.innerText = 'mode: insert'
+        itemStyleInsert.style.backgroundColor = 'rgb(42, 94, 40)'
         insert = true
     }
     console.log(insert); 
@@ -134,7 +142,7 @@ itemCSButton.addEventListener('click', function(){
         itemInfoNote.innerText = 'note sent to ' + itemCSButton.value
         clickCount = 0
         itemNotes.value = '...'
-        location.reload
+        location.reload()
     }
 })
 
@@ -151,7 +159,13 @@ itemMathButton.addEventListener('click', function(){
         
     }
     else if(clickCount == 2){
-        localStorage.setItem('math-notes', itemNotes.value)
+        if(insert){
+            console.log("inserted");
+            localStorage.setItem('math-notes', localStorage.getItem('math-notes') + itemNotes.value)
+        }
+        else{
+            localStorage.setItem('math-notes', itemNotes.value)
+        }
         itemInfoNote.innerText = 'note sent to ' + itemMathButton.value
         clickCount = 0
         itemNotes.value = '...'
@@ -171,7 +185,13 @@ itemVAButton.addEventListener('click', function(){
         
     }
     else if(clickCount == 2){
-        localStorage.setItem('va-notes', itemNotes.value)
+        if(insert){
+            console.log("inserted");
+            localStorage.setItem('va-notes', localStorage.getItem('va-notes') + itemNotes.value)
+        }
+        else{
+            localStorage.setItem('va-notes', itemNotes.value)
+        }
         itemInfoNote.innerText = 'note sent to '+ itemVAButton.value
         clickCount = 0
         itemNotes.value = '...'
@@ -191,7 +211,13 @@ itemEnglishButton.addEventListener('click', function(){
         
     }
     else if(clickCount == 2){
-        localStorage.setItem('eng-notes', itemNotes.value)
+        if(insert){
+            console.log("inserted");
+            localStorage.setItem('eng-notes', localStorage.getItem('eng-notes') + itemNotes.value)
+        }
+        else{
+            localStorage.setItem('eng-notes', itemNotes.value)
+        }
         itemInfoNote.innerText = 'note sent to '+ itemEnglishButton.value
         clickCount = 0
         itemNotes.value = '...'
@@ -211,7 +237,13 @@ itemPsychoButton.addEventListener('click', function(){
         
     }
     else if(clickCount == 2){
-        localStorage.setItem('psycho-notes', itemNotes.value)
+        if(insert){
+            console.log("inserted");
+            localStorage.setItem('psycho-notes', localStorage.getItem('psycho-notes') + itemNotes.value)
+        }
+        else{
+            localStorage.setItem('psycho-notes', itemNotes.value)
+        }
         itemInfoNote.innerText = 'note sent to '+ itemPsychoButton.value
         clickCount = 0
         itemNotes.value = '...'
@@ -231,7 +263,13 @@ itemPlButton.addEventListener('click', function(){
         
     }
     else if(clickCount == 2){
-        localStorage.setItem('pl-notes', itemNotes.value)
+        if(insert){
+            console.log("inserted");
+            localStorage.setItem('pl-notes', localStorage.getItem('pl-notes') + itemNotes.value)
+        }
+        else{
+            localStorage.setItem('pl-notes', itemNotes.value)
+        }
         itemInfoNote.innerText = 'note sent to '+ itemPlButton.value
         clickCount = 0
         itemNotes.value = '...'
