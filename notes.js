@@ -54,6 +54,11 @@ itemStyleLink.addEventListener('click', function(){
     itemNotes.value = itemNotes.value + '<a href="#" target=_blank class="linked"> link name <a/>'
 })
 
+var itemStyleLine = document.getElementsByClassName('style-line-btn')[0]
+itemStyleLine.addEventListener('click', function(){
+    itemNotes.value = itemNotes.value + '<br/>'
+})
+
 var tempNotes = "..."
 var itemStyleInsert = document.getElementsByClassName('style-insert-btn')[0]
 itemStyleInsert.addEventListener('click', function(){
@@ -282,6 +287,7 @@ function checkClicks(clicks, button){
         button.style.backgroundColor = 'rgb(146, 43, 66)'
         itemAbandon.hidden = false
         itemStyleLink.hidden = false
+        itemStyleLine.hidden = false
         itemStyleInsert.hidden = false
         console.log("first clicked", button);
     }
@@ -289,6 +295,7 @@ function checkClicks(clicks, button){
         button.style.backgroundColor = 'rgb(42, 94, 40)'
         itemAbandon.hidden = true
         itemStyleLink.hidden = true
+        itemStyleLine.hidden = false
         itemStyleInsert.hidden = true
         console.log("submited");
     }

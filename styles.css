@@ -58,7 +58,7 @@ body{
     border-spacing: 8vw 2vw;
 }
 
-.add-calender-btn, .calender-btn, .calender-event , .calender-value, .reset, .reset-done, .rmv-calender-btn, .task-day, .submit, .task-day-done, .submit-done, .notes, .reset-notes, .clear-notes, .link-remove{
+.add-calender-btn, .calender-btn, .calender-event , .calender-value, .reset, .reset-done, .rmv-calender-btn, .task-day, .submit, .task-day-done, .submit-done, .notes, .notes-sub, .reset-notes, .clear-notes, .link-remove{
     background-color: rgb(146, 43, 66);
     font-weight: bold;
     color: rgb(255, 236, 242);
@@ -82,6 +82,11 @@ body{
     width: 73vw;
 }
 
+.notes-sub{
+    text-align: start;
+    height: 50vh;
+    width: 100vw;
+}
 
 .hours , .goal ,.plus ,.done, .submit-notes, .pl-add-notes ,.cs-add-notes,.va-add-notes,.math-add-notes,.psycho-add-notes,.eng-add-notes,.home,.final-goal,.add-links{
     background-color: rgb(42, 94, 40);
@@ -93,7 +98,7 @@ body{
     margin-bottom: 0.3vh;
 }
 
-.link-value, .link-names ,.style-insert-btn ,.style-link-btn{
+.link-value, .link-names ,.style-insert-btn ,.style-link-btn,.style-line-btn{
     background-color: rgb(39, 48, 77);
     font-weight: bold;
     color: rgb(255, 236, 242);
@@ -102,9 +107,6 @@ body{
     box-shadow: 0.1vw 0.1vw 15px 0px rgba(0,0,0,0.75);
     margin-bottom: 0.3vh;
 }
-
-
-
 
 .done{
     font-size: 1.2vw;
@@ -208,9 +210,10 @@ nav a , p {
 }
 
 .link-div{
-    width: 99vw;
+    width: 97vw;
     height: 33vh;
-    background-color: rgb(20, 26, 37);
+    background-color: rgb(8, 14, 26);
+    border-radius: 3rem;
 }
 
 h2{
