@@ -14,12 +14,16 @@ var stored_links = JSON.parse(localStorage.getItem("links"));
 
 localStorage.setItem("links", JSON.stringify(stored_links));
 
+for(var i = 0; i<itemLinks.length;i++){
+    var linkText = itemLinks[i]
+    linkText.innerHTML = '<a href="' + stored_links.pop() + '" target=_blank class="linked"> Link <a/>'
+    console.log(stored_links);
+}
+
 itemAddLink.addEventListener('click', function() {
-    for(var i = 0; i<itemLinks.length;i++){
-        var linkText = itemLinks[i]
-        linkText.innerHTML = '<a href="' + stored_links.pop() + '" target=_blank class="linked"> Link <a/>'
-        console.log(stored_links);
-    }
+    stored_links.push('added link')
+    localStorage.setItem("links", JSON.stringify(stored_links))
+    location.reload()
 })
 
 itemNoteHome.addEventListener('click', function(){
