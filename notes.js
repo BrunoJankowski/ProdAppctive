@@ -8,6 +8,11 @@ var itemAbandon = document.getElementsByClassName('cancel-notes')[0]
 var itemNoteHome = document.getElementsByClassName('home')[0]
 var itemLinks = document.getElementsByClassName('link')[0]
 var itemInfoNote = document.getElementsByClassName('info')[0]
+var itemAddLink = document.getElementsByClassName('add-links')[0]
+
+var stored_links = JSON.parse(localStorage.getItem("links")); 
+
+localStorage.setItem("links", JSON.stringify(stored_links));
 
 itemLinks.innerHTML = '<a href="https://www.notion.so/Code-Notes-IB-061a11c16e7b4adaaa8c1d540bd97650?pvs=4" target=_blank class="linked"> CODE NOTES <a/>'
 
