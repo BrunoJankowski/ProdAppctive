@@ -7,23 +7,33 @@ var itemClear = document.getElementsByClassName('clear-notes')[0]
 var itemAbandon = document.getElementsByClassName('cancel-notes')[0]
 var itemNoteHome = document.getElementsByClassName('home')[0]
 var itemLinks = document.getElementsByClassName('link')
+var itemLinksValue = document.getElementsByClassName('link-value')[0]
 var itemInfoNote = document.getElementsByClassName('info')[0]
 var itemAddLink = document.getElementsByClassName('add-links')[0]
+var itemLinksNames = document.getElementsByClassName('link-names')[0]
 
 var stored_links = JSON.parse(localStorage.getItem("links")); 
-
+var stored_names = JSON.parse(localStorage.getItem("link-names")); 
 localStorage.setItem("links", JSON.stringify(stored_links));
+localStorage.setItem("link-names", JSON.stringify(stored_names));
 
-for(var i = 0; i<itemLinks.length;i++){
-    var linkText = itemLinks[i]
-    linkText.innerHTML = '<a href="' + stored_links.pop() + '" target=_blank class="linked"> Link <a/>'
-    console.log(stored_links);
+function reloadLinks() {
+    for(var i = 0; i<itemLinks.length;i++){
+        var linkText = itemLinks[i]
+        linkText.innerHTML = '<a href="' + stored_links[i] + '" target=_blank class="linked">' + stored_names[i] + '<a/>'
+        console.log(stored_links);
+    }
 }
 
 itemAddLink.addEventListener('click', function() {
-    stored_links.push('added link')
+    
+    var link_value = itemLinksValue.value
+    var link_value = itemLinksNames.value
+
+    stored_links.push(link_value)
+    stored_names.push(link_value)
     localStorage.setItem("links", JSON.stringify(stored_links))
-    location.reload()
+    reloadLinks()
 })
 
 itemNoteHome.addEventListener('click', function(){
