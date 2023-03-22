@@ -1,18 +1,23 @@
 var itemNotes = document.getElementsByClassName('notes')[0]
 itemNotes.value = localStorage.getItem('notes')
 
+//home note buttons
 var itemSumbit = document.getElementsByClassName('submit-notes')[0]
 var itemReset = document.getElementsByClassName('reset-notes')[0]
+var itemNoteHome = document.getElementsByClassName('home')[0]
+
+//edit notes btns
 var itemClear = document.getElementsByClassName('clear-notes')[0]
 var itemAbandon = document.getElementsByClassName('cancel-notes')[0]
-var itemNoteHome = document.getElementsByClassName('home')[0]
-var itemLinks = document.getElementsByClassName('link')
+var itemInfoNote = document.getElementsByClassName('info')[0] //infomessages
+
+//links sys
+
 var itemLinksValue = document.getElementsByClassName('link-value')[0]
-var itemInfoNote = document.getElementsByClassName('info')[0]
-var itemAddLink = document.getElementsByClassName('add-links')[0]
 var itemLinksNames = document.getElementsByClassName('link-names')[0]
+var itemLinks = document.getElementsByClassName('link')
+var itemAddLink = document.getElementsByClassName('add-links')[0]
 var itemLinkRemove = document.getElementsByClassName('link-remove')
-console.log(itemLinksNames);
 
 var stored_links = JSON.parse(localStorage.getItem("links")); 
 var stored_names = JSON.parse(localStorage.getItem("link-names")); 
@@ -20,6 +25,7 @@ localStorage.setItem("links", JSON.stringify(stored_links));
 localStorage.setItem("link-names", JSON.stringify(stored_names));
 
 reloadLinks() //run to see links
+
 
 function reloadLinks() {
     for(var i = 0; i<stored_names.length;i++){
@@ -37,9 +43,23 @@ function reloadLinks() {
             localStorage.setItem("link-names", JSON.stringify(stored_names))
             location.reload()
         })
-        console.log(stored_links);
     }
 }
+
+//styling text btns
+
+var itemStyleLink = document.getElementsByClassName('style-link-btn')[0]
+
+
+
+itemStyleLink.addEventListener('click', function(){
+    itemNotes.value = itemNotes.value + '<a href="#" target=_blank> link name <a/>'
+})
+
+
+
+
+//Notes sys btns functions
 
 itemAddLink.addEventListener('click', function() {
     
@@ -81,6 +101,8 @@ itemAbandon.addEventListener('click', function(){
     clickCount = 0
 })
 
+
+//Subject notes sys (btns and functions)
 var itemCSButton = document.getElementsByClassName('cs-add-notes')[0]
 itemCSButton.addEventListener('click', function(){
     clickCount ++
@@ -203,11 +225,13 @@ function checkClicks(clicks, button){
     if(clicks == 1){
         button.style.backgroundColor = 'rgb(146, 43, 66)'
         itemAbandon.hidden = false
+        itemStyleLink.hidden = false
         console.log("first clicked", button);
     }
     else if(clicks == 2){
         button.style.backgroundColor = 'rgb(42, 94, 40)'
         itemAbandon.hidden = true
+        itemStyleLink.hidden = true
         console.log("submited");
     }
     else{
