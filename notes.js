@@ -9,7 +9,7 @@ var itemNoteHome = document.getElementsByClassName('home')[0]
 var itemLinks = document.getElementsByClassName('link')[0]
 var itemInfoNote = document.getElementsByClassName('info')[0]
 
-itemLinks.innerHTML = '<a href="https://www.notion.so/Code-Notes-IB-061a11c16e7b4adaaa8c1d540bd97650?pvs=4" target=_blank> CODE NOTES <a/>'
+itemLinks.innerHTML = '<a href="https://www.notion.so/Code-Notes-IB-061a11c16e7b4adaaa8c1d540bd97650?pvs=4" target=_blank class="linked"> CODE NOTES <a/>'
 
 itemNoteHome.addEventListener('click', function(){
     itemNotes.value = localStorage.getItem('notes')
