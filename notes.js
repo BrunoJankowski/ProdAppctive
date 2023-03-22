@@ -47,13 +47,23 @@ function reloadLinks() {
 }
 
 //styling text btns
+var insert = false
 
 var itemStyleLink = document.getElementsByClassName('style-link-btn')[0]
-
-
-
 itemStyleLink.addEventListener('click', function(){
     itemNotes.value = itemNotes.value + '<a href="#" target=_blank> link name <a/>'
+})
+
+var itemStyleInsert = document.getElementsByClassName('style-insert-btn')[0]
+itemStyleInsert.addEventListener('click', function(){
+    if(insert){
+        insert = false
+    }
+    else{
+
+        insert = true
+    }
+    console.log(insert); 
 })
 
 
@@ -103,6 +113,8 @@ itemAbandon.addEventListener('click', function(){
 
 
 //Subject notes sys (btns and functions)
+
+
 var itemCSButton = document.getElementsByClassName('cs-add-notes')[0]
 itemCSButton.addEventListener('click', function(){
     clickCount ++
@@ -112,7 +124,13 @@ itemCSButton.addEventListener('click', function(){
         itemInfoNote.innerText = 'note opened ' + itemCSButton.value
     }
     else if(clickCount == 2){
-        localStorage.setItem('cs-notes', itemNotes.value)
+        if(insert){
+            console.log("inserted");
+            localStorage.setItem('cs-notes', localStorage.getItem('cs-notes') + itemNotes.value)
+        }
+        else{
+            localStorage.setItem('cs-notes', itemNotes.value)
+        }
         itemInfoNote.innerText = 'note sent to ' + itemCSButton.value
         clickCount = 0
         itemNotes.value = '...'
@@ -226,12 +244,14 @@ function checkClicks(clicks, button){
         button.style.backgroundColor = 'rgb(146, 43, 66)'
         itemAbandon.hidden = false
         itemStyleLink.hidden = false
+        itemStyleInsert.hidden = false
         console.log("first clicked", button);
     }
     else if(clicks == 2){
         button.style.backgroundColor = 'rgb(42, 94, 40)'
         itemAbandon.hidden = true
         itemStyleLink.hidden = true
+        itemStyleInsert.hidden = true
         console.log("submited");
     }
     else{
