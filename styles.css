@@ -84,7 +84,7 @@ body{
 }
 
 
-.hours , .goal ,.plus ,.done, .submit-notes, .pl-add-notes ,.cs-add-notes,.va-add-notes,.math-add-notes,.psycho-add-notes,.eng-add-notes,.home,.final-goal{
+.hours , .goal ,.plus ,.done, .submit-notes, .pl-add-notes ,.cs-add-notes,.va-add-notes,.math-add-notes,.psycho-add-notes,.eng-add-notes,.home,.final-goal,.add-links{
     background-color: rgb(42, 94, 40);
     font-weight: bold;
     color: rgb(255, 236, 242);
@@ -93,6 +93,19 @@ body{
     box-shadow: 0.1vw 0.1vw 15px 0px rgba(0,0,0,0.75);
     margin-bottom: 0.3vh;
 }
+
+.link-value, .link-names ,.style-insert-btn ,.style-link-btn{
+    background-color: rgb(39, 48, 77);
+    font-weight: bold;
+    color: rgb(255, 236, 242);
+    border-color: rgb(247, 243, 255);
+    border-radius: 15px;
+    box-shadow: 0.1vw 0.1vw 15px 0px rgba(0,0,0,0.75);
+    margin-bottom: 0.3vh;
+}
+
+
+
 
 .done{
     font-size: 1.2vw;
