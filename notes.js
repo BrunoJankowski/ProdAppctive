@@ -11,6 +11,7 @@ var itemLinksValue = document.getElementsByClassName('link-value')[0]
 var itemInfoNote = document.getElementsByClassName('info')[0]
 var itemAddLink = document.getElementsByClassName('add-links')[0]
 var itemLinksNames = document.getElementsByClassName('link-names')[0]
+var itemLinkRemove = document.getElementsByClassName('link-remove')
 console.log(itemLinksNames);
 
 var stored_links = JSON.parse(localStorage.getItem("links")); 
@@ -23,7 +24,19 @@ reloadLinks() //run to see links
 function reloadLinks() {
     for(var i = 0; i<stored_names.length;i++){
         var linkText = itemLinks[i]
+        var link_remove_btn = itemLinkRemove[i]
         linkText.innerHTML = '<a href="' + stored_links[i] + '" target=_blank class="linked">' + stored_names[i] + '<a/>'
+        link_remove_btn.hidden = false
+        link_remove_btn.setAttribute('data-i', i)
+        link_remove_btn.addEventListener('click', function(event){
+            var button_clicked = event.target
+            var index = button_clicked.getAttribute('data-i')
+            stored_links.splice(index)
+            stored_names.splice(index)
+            localStorage.setItem("links", JSON.stringify(stored_links))
+            localStorage.setItem("link-names", JSON.stringify(stored_names))
+            location.reload()
+        })
         console.log(stored_links);
     }
 }
