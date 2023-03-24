@@ -53,7 +53,7 @@ for(var i = 0; i < itemButton.length; i++){
         hours_worked.value++ 
         localStorage.setItem('hours_worked_CS', hours_worked.value)
         var score = hours_worked.value
-        checkGoal(score, goal_score) //add check goal
+        checkGoal(score, itemGoal.value) //add check goal
     })
 
     reset.addEventListener("click", function(event){
@@ -63,7 +63,7 @@ for(var i = 0; i < itemButton.length; i++){
         reset_hours.value = 0
         localStorage.setItem('hours_worked_CS', 0)
         var score = reset_hours.value
-        checkGoal(score, goal_score)
+        checkGoal(score, itemGoal.value)
     })
 
 }
