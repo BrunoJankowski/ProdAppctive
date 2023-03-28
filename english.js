@@ -37,11 +37,8 @@ for(var i = 0; i < itemButton.length; i++){
     var button = itemButton[i]
     var hours_ittem = itemHours[i]
     var reset = itemReset[i]
-    itemFinalGoal.value --
     var initial_hours = localStorage.getItem('hours_worked_english')
     hours_ittem.value = initial_hours
-
-
     button.setAttribute('index', i)
     reset.setAttribute('index', i)
     button.addEventListener("click", function(event){
